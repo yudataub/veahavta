@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ספריית ואהבת</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Heebo:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f8f0ee;--paper:#fffdf8;--ink:#2a2118;--muted:#7a6a58;--line:#e6dccb;
+  --gold:#b5654f;--gold2:#f0b38f;--navy:#4a1838;--navy2:#6b2752;--accent:#c2410c;
+  --shadow:0 6px 24px rgba(60,40,10,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Heebo,Arial,sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;padding-bottom:120px}
+button{font-family:inherit;cursor:pointer}
+a{color:inherit}
+
+/* ===== HERO ===== */
+.hero{background:radial-gradient(ellipse at 70% -20%,#8a3a6a 0%,var(--navy) 55%,#24091b 100%);color:#fff;padding:44px 16px 70px;text-align:center;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,.025) 0 2px,transparent 2px 14px)}
+.hero>*{position:relative}
+.hero .kicker{color:var(--gold2);letter-spacing:.12em;font-size:.85rem;font-weight:500}
+.hero h1{font-family:"Frank Ruhl Libre",serif;font-weight:900;font-size:clamp(2rem,6vw,3.4rem);margin:8px 0 6px;line-height:1.1}
+.hero p{color:#ecd3df;font-size:1.02rem}
+.stats{display:flex;justify-content:center;gap:clamp(18px,5vw,56px);margin-top:22px;flex-wrap:wrap}
+.stats b{display:block;font-family:"Frank Ruhl Libre",serif;font-size:1.9rem;color:var(--gold2)}
+.stats span{font-size:.85rem;color:#e0c2d2}
+
+.search{max-width:680px;margin:-28px auto 0;padding:0 16px;position:relative;z-index:2}
+.search input{width:100%;padding:16px 52px 16px 20px;border-radius:40px;border:1px solid var(--line);font:inherit;font-size:1.05rem;background:var(--paper);box-shadow:var(--shadow);outline:none;color:var(--ink)}
+.search input:focus{border-color:var(--gold)}
+.search .ico{position:absolute;right:34px;top:50%;transform:translateY(-50%);font-size:1.2rem;opacity:.6}
+
+main{max-width:1180px;margin:0 auto;padding:28px 16px}
+
+/* continue strip */
+.resume{display:none;background:linear-gradient(90deg,#fff6e3,var(--paper));border:1px solid #f0dcb0;border-radius:16px;padding:14px 18px;margin-bottom:24px;align-items:center;gap:14px;box-shadow:var(--shadow)}
+.resume.on{display:flex}
+.resume .rt{flex:1;min-width:0}
+.resume small{color:var(--muted)}
+.resume .name{font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* ===== TOPICS GRID ===== */
+.sec-h{font-family:"Frank Ruhl Libre",serif;font-size:1.5rem;margin:6px 0 14px;display:flex;align-items:center;gap:10px}
+.sec-h:after{content:"";flex:1;height:1px;background:var(--line)}
+.sec-h.m2{margin-top:38px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+.topic{text-decoration:none;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:20px;text-align:right;box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s,border-color .18s;display:flex;gap:14px;align-items:flex-start;color:var(--ink)}
+.topic:hover{transform:translateY(-3px);border-color:var(--gold2);box-shadow:0 12px 30px rgba(60,40,10,.16)}
+.topic .em{font-size:2rem;width:58px;height:58px;flex-shrink:0;border-radius:16px;display:grid;place-items:center;background:var(--tint,#f3ead8)}
+.topic h3{font-family:"Frank Ruhl Libre",serif;font-size:1.22rem;line-height:1.25;margin-bottom:6px}
+.topic .meta{font-size:.86rem;color:var(--muted)}
+.topic .subs{font-size:.8rem;color:var(--muted);margin-top:8px;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+/* ===== TOPIC VIEW ===== */
+.crumbs{display:flex;align-items:center;gap:10px;margin-bottom:18px;flex-wrap:wrap}
+.back{text-decoration:none;background:var(--paper);border:1px solid var(--line);border-radius:30px;padding:8px 16px;font-size:.95rem;color:var(--ink)}
+.back:hover{border-color:var(--gold)}
+.vh{display:flex;gap:16px;align-items:center;margin-bottom:22px}
+.vh .em{font-size:2.4rem;width:72px;height:72px;border-radius:20px;display:grid;place-items:center;background:var(--tint,#f3ead8);flex-shrink:0}
+.vh h2{font-family:"Frank Ruhl Libre",serif;font-size:clamp(1.5rem,4vw,2.2rem);line-height:1.15}
+.vh .meta{color:var(--muted)}
+.playall{margin-right:auto;background:var(--navy);color:#fff;border:0;border-radius:30px;padding:10px 20px;font-size:.95rem;white-space:nowrap}
+.playall:hover{background:var(--navy2)}
+
+.group{background:var(--paper);border:1px solid var(--line);border-radius:16px;margin-bottom:14px;overflow:hidden;box-shadow:0 2px 10px rgba(60,40,10,.05)}
+.group>summary{list-style:none;padding:14px 18px;font-weight:700;display:flex;justify-content:space-between;align-items:center;gap:10px;cursor:pointer;background:linear-gradient(90deg,#fbf6ec,var(--paper))}
+.group>summary::-webkit-details-marker{display:none}
+.group>summary .cnt{font-weight:500;font-size:.82rem;color:var(--muted);background:#f3ead8;border-radius:20px;padding:2px 10px;white-space:nowrap}
+.group>summary:before{content:"◂";color:var(--gold);transition:transform .2s;margin-left:4px}
+.group[open]>summary:before{transform:rotate(-90deg)}
+.group>summary .gt{flex:1;min-width:0}
+
+.lesson{display:flex;align-items:center;gap:12px;padding:10px 16px;border-top:1px solid #f1e9da;transition:background .15s}
+.lesson:hover{background:#fdf8ee}
+.lesson.cur{background:#fff3d9}
+.pbtn{width:38px;height:38px;border-radius:50%;border:0;background:var(--navy);color:#fff;font-size:.9rem;flex-shrink:0;display:grid;place-items:center}
+.lesson.cur .pbtn{background:var(--accent)}
+.lesson .lt{flex:1;min-width:0}
+.lesson .ln{font-size:.98rem;line-height:1.35;word-break:break-word}
+.lesson .lp{font-size:.78rem;color:var(--muted);margin-top:2px}
+.lesson .dur{font-size:.85rem;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.lesson .done{color:#3c8a4e;font-size:.8rem}
+.prog{height:3px;background:#efe5d2;border-radius:2px;margin-top:5px;overflow:hidden}
+.prog i{display:block;height:100%;background:var(--gold)}
+mark{background:#ffe08a;color:inherit;border-radius:3px;padding:0 1px}
+.empty{text-align:center;color:var(--muted);padding:40px}
+.more{display:block;margin:10px auto;background:var(--paper);border:1px solid var(--line);border-radius:30px;padding:8px 20px}
+
+/* ===== PLAYER ===== */
+.player{position:fixed;bottom:0;left:0;right:0;background:rgba(52,16,40,.97);backdrop-filter:blur(8px);color:#fff;padding:10px 16px calc(10px + env(safe-area-inset-bottom));box-shadow:0 -6px 24px rgba(0,0,0,.25);transform:translateY(110%);transition:transform .3s;z-index:20}
+.player.on{transform:none}
+.pl-in{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:14px}
+.pl-title{min-width:0}
+.pl-title b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:.98rem}
+.pl-title small{color:#dcb3c8;font-size:.8rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
+.ctrls{display:flex;align-items:center;gap:6px;direction:ltr}
+.ctrls button{background:none;border:0;color:#fff;width:40px;height:40px;border-radius:50%;font-size:1rem}
+.ctrls button:hover{background:rgba(255,255,255,.1)}
+.ctrls .big{width:52px;height:52px;background:var(--gold2);color:var(--navy);font-size:1.3rem}
+.ctrls .big:hover{background:#f0c870}
+.ctrls .sk{font-size:.75rem;font-weight:700}
+.pl-side{display:flex;align-items:center;gap:8px;justify-content:flex-end}
+.pl-side button,.pl-side a{background:rgba(255,255,255,.1);border:0;color:#fff;border-radius:20px;padding:6px 12px;font-size:.82rem;text-decoration:none;white-space:nowrap}
+.pl-side button:hover,.pl-side a:hover{background:rgba(255,255,255,.2)}
+.sleepw{position:relative}
+#bSleep.on{background:var(--gold2);color:var(--navy);font-weight:700}
+.sleepm{position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);background:#fff;color:var(--ink);border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.3);padding:6px;display:none;min-width:170px;z-index:5}
+.sleepm.open{display:block}
+.sleepm div{font-size:.78rem;color:var(--muted);padding:6px 10px 4px}
+.sleepm button{display:block;width:100%;text-align:right;background:none!important;color:var(--ink)!important;border-radius:8px!important;padding:8px 10px!important;font-size:.9rem!important}
+.sleepm button:hover{background:#f6efe0!important}
+.sleepm button.sel{font-weight:700;color:var(--accent)!important}
+.bar{grid-column:1/-1;display:flex;align-items:center;gap:10px;direction:ltr;font-size:.78rem;color:#e0c2d2;font-variant-numeric:tabular-nums}
+.bar input{flex:1;accent-color:var(--gold2);height:4px}
+.toast{position:fixed;bottom:130px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:8px 18px;border-radius:20px;font-size:.9rem;opacity:0;transition:opacity .25s;pointer-events:none;z-index:30}
+.toast.on{opacity:1}
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding:30px 16px}
+
+@media (max-width:720px){
+  .pl-in{grid-template-columns:1fr;gap:6px}
+  .ctrls{justify-content:center}
+  .pl-side{justify-content:center}
+  .pl-title{text-align:center}
+  .vh{flex-wrap:wrap}
+  .playall{margin-inline-start:0}
+  body{padding-bottom:200px}
+  .toast{bottom:210px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="kicker">זוגיות · אינטימיות · אהבה</div>
+  <h1>ספריית ואהבת</h1>
+  <p>שיעורים והרצאות לפי מרצים ונושאים — לחצו ושמעו כאן</p>
+  <div class="stats">
+    <div><b id="sLessons">—</b><span>שיעורים</span></div>
+    <div><b id="sHours">—</b><span>שעות האזנה</span></div>
+    <div><b id="sTopics">—</b><span>נושאים</span></div>
+  </div>
+</header>
+
+<div class="search"><span class="ico">🔍</span><input id="q" type="search" placeholder="חיפוש שיעור, מרצה או נושא..." autocomplete="off"></div>
+
+<main>
+  <div class="resume" id="resume">
+    <button class="pbtn" id="resumeBtn" aria-label="המשך">▶</button>
+    <div class="rt"><small>להמשיך מאיפה שעצרתם</small><div class="name" id="resumeName"></div></div>
+  </div>
+  <div id="view"></div>
+</main>
+
+<footer>עודכן <span id="upd"></span></footer>
+
+<div class="player" id="player">
+  <div class="pl-in">
+    <div class="pl-title"><b id="pTitle"></b><small id="pSub"></small></div>
+    <div class="ctrls">
+      <button id="bPrev" title="הקודם">⏮</button>
+      <button id="bBack" class="sk" title="15 שניות אחורה">↺15</button>
+      <button id="bPlay" class="big" title="נגן/השהה">▶</button>
+      <button id="bFwd" class="sk" title="15 שניות קדימה">15↻</button>
+      <button id="bNext" title="הבא">⏭</button>
+    </div>
+    <div class="pl-side">
+      <span class="sleepw"><button id="bSleep" title="טיימר שינה — הנגן ייעצר לבד">🌙</button>
+        <span class="sleepm" id="sleepMenu"><div>הנגן ייעצר בעוד…</div>
+          <button data-m="5">5 דקות</button><button data-m="10">10 דקות</button><button data-m="15">15 דקות</button><button data-m="30">30 דקות</button><button data-m="45">45 דקות</button>
+          <button data-m="60">שעה</button><button data-m="90">שעה וחצי</button><button data-m="end">בסוף השיעור הנוכחי</button>
+          <button data-m="0">כיבוי הטיימר</button></span></span>
+      <button id="bRate" title="מהירות">1×</button>
+      <button id="bShare" title="העתק קישור לשיעור">🔗 קישור</button>
+      <a id="bDl" href="#" target="_blank" rel="noopener" title="הורדה">⬇</a>
+    </div>
+    <div class="bar"><span id="tCur">0:00</span><input id="seek" type="range" min="0" max="1000" value="0" aria-label="מיקום"><span id="tDur">0:00</span></div>
+  </div>
+</div>
+<audio id="audio" preload="none"></audio>
+<div class="toast" id="toast"></div>
+
+<script src="data.js"></script>
+<script>
+(function(){
+"use strict";
+var L = window.LESSONS || [];
+// הנושאים (שם, אימוג'י, תיאור, צבע, קבוצה) מגיעים מ-data.js — נקבעים ב-tools/topics.py
+var TM={};(window.TOPICS||[]).forEach(function(t,k){t.k=k;TM[t.id]=t;});
+function unit(c){return "שיעורים";}
+function icon(t){return (TM[t.c]||{}).e||"🎧";}
+function tint(t){return ((TM[t.c]||{}).a||"#b5654f")+"22";}
+
+var store = {
+  get:function(k,d){try{var v=localStorage.getItem(k);return v==null?d:JSON.parse(v);}catch(e){return d;}},
+  set:function(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+};
+var pos = store.get("veahavta.pos",{});      // {id: seconds}
+var done = store.get("veahavta.done",{});    // {id: 1}
+
+function $(id){return document.getElementById(id);}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+function fmt(s){s=Math.max(0,Math.round(s||0));var h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=s%60;return (h?h+":"+(m<10?"0":""):"")+m+":"+(x<10?"0":"")+x;}
+function hrs(s){if(!s)return "";var h=Math.floor(s/3600),m=Math.round(s%3600/60);return h?h+" שע׳"+(m?" "+m+" דק׳":""):m+" דק׳";}
+function topicName(c){return (TM[c]||{}).n||c;}
+function hi(text,q){if(!q)return esc(text);var t=esc(text),r=q.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");return t.replace(new RegExp("("+esc(r)+")","gi"),"<mark>$1</mark>");}
+
+// ----- topics -----
+var byId = {}, topics = [], tmap = {};
+L.forEach(function(x){
+  byId[x.i]=x;
+  if(!tmap[x.c]){tmap[x.c]={c:x.c,items:[],dur:0,subs:{}};topics.push(tmap[x.c]);}
+  var t=tmap[x.c];t.items.push(x);t.dur+=x.d||0;
+  var top=(x.s||"").split(" / ")[0];if(top)t.subs[top]=1;
+});
+topics.sort(function(a,b){return ((TM[a.c]||{}).k||99)-((TM[b.c]||{}).k||99);});
+var total=0;L.forEach(function(x){total+=x.d||0;});
+$("sLessons").textContent=L.length.toLocaleString("he-IL");
+$("sHours").textContent=Math.round(total/3600).toLocaleString("he-IL");
+$("sTopics").textContent=topics.length;
+$("upd").textContent=window.LESSONS_UPDATED||"";
+
+var queue=[], view=$("view");
+
+function lessonRow(x,q,showTopic){
+  var p=pos[x.i]&&x.d?Math.min(100,pos[x.i]/x.d*100):0;
+  var sub=showTopic?topicName(x.c)+(x.s?" / "+x.s:""):"";
+  return '<div class="lesson'+(cur&&cur.i===x.i?" cur":"")+'" data-i="'+x.i+'">'+
+    '<button class="pbtn" aria-label="נגן">'+(cur&&cur.i===x.i&&!audio.paused?"❚❚":"▶")+'</button>'+
+    '<div class="lt"><div class="ln">'+hi(x.t,q)+'</div>'+
+    (sub?'<div class="lp">'+hi(sub,q)+'</div>':"")+
+    (p>1&&!done[x.i]?'<div class="prog"><i style="width:'+p.toFixed(1)+'%"></i></div>':"")+'</div>'+
+    (done[x.i]?'<span class="done" title="נשמע">✓</span>':"")+
+    '<span class="dur">'+(x.d?fmt(x.d):"")+'</span></div>';
+}
+
+function renderHome(){
+  queue=[];
+  function card(t){
+    return '<a class="topic" href="#t='+encodeURIComponent(t.c)+'" style="--tint:'+tint(t)+'">'+
+      '<div class="em">'+icon(t)+'</div><div><h3>'+esc(topicName(t.c))+'</h3>'+
+      '<div class="meta">'+t.items.length+' '+unit(t.c)+(t.dur?' · '+hrs(t.dur):'')+'</div>'+
+      '<div class="subs">'+esc((TM[t.c]||{}).d||"")+'</div></div></a>';
+  }
+  var G=[["speaker","👤 לפי מרצה"],["theme","🗂️ לפי נושא"],["long","🎧 להאזנה ארוכה"]];
+  view.innerHTML=G.map(function(g,k){
+    var ts=topics.filter(function(t){return ((TM[t.c]||{}).g||"theme")===g[0];});
+    return ts.length?'<h2 class="sec-h'+(k?' m2':'')+'">'+g[1]+'</h2><div class="grid">'+ts.map(card).join("")+'</div>':'';
+  }).join("");
+}
+
+function renderTopic(key){
+  var t=topics.filter(function(t){return t.c===key;})[0];
+  if(!t){renderHome();return;}
+  var k=topics.indexOf(t);
+  var groups={},order=[];
+  t.items.forEach(function(x){var g=x.s||"";if(!groups[g]){groups[g]=[];order.push(g);}groups[g].push(x);});
+  order.sort(function(a,b){return (a==="")-(b==="")||a.localeCompare(b,"he",{numeric:true});});
+  queue=[];order.forEach(function(g){groups[g].sort(function(a,b){return a.t.localeCompare(b.t,"he",{numeric:true});});queue=queue.concat(groups[g]);});
+  view.innerHTML='<div class="crumbs"><a class="back" href="#">→ כל הנושאים</a></div>'+
+    '<div class="vh" style="--tint:'+tint(t)+'"><div class="em">'+icon(t)+'</div>'+
+    '<div><h2>'+esc(topicName(t.c))+'</h2><div class="meta">'+t.items.length+' '+unit(t.c)+(t.dur?' · '+hrs(t.dur):'')+'</div>'+((TM[t.c]||{}).d?'<div class="meta" style="margin-top:2px">'+esc(TM[t.c].d)+'</div>':'')+'</div>'+
+    '<button class="playall" id="playAll">▶ נגן הכל</button></div>'+
+    order.map(function(g){
+      return '<details class="group"'+(order.length<=3||!g&&order.length===1?" open":"")+'><summary><span class="gt">'+esc(g||(order.length>1?"שיעורים נוספים":"כל השיעורים"))+'</span><span class="cnt">'+groups[g].length+'</span></summary>'+
+        groups[g].map(function(x){return lessonRow(x,"",false);}).join("")+'</details>';
+    }).join("");
+  $("playAll").onclick=function(){if(queue.length)play(queue[0]);};
+  window.scrollTo(0,0);
+}
+
+var LIMIT=150;
+function renderSearch(q,limit){
+  var w=q.toLowerCase().split(/\s+/).filter(Boolean);
+  var res=L.filter(function(x){var h=(x.t+" "+x.c+" "+x.s).toLowerCase();return w.every(function(v){return h.indexOf(v)>=0;});});
+  queue=res;
+  var show=res.slice(0,limit||LIMIT);
+  view.innerHTML='<div class="crumbs"><a class="back" href="#" id="clr">→ כל הנושאים</a><span class="meta">'+res.length+' תוצאות עבור „'+esc(q)+'”</span></div>'+
+    (res.length?'<div class="group" style="padding-top:0">'+show.map(function(x){return lessonRow(x,q,true);}).join("")+'</div>':'<div class="empty">לא נמצאו שיעורים 😕</div>')+
+    (res.length>show.length?'<button class="more" id="more">הצג עוד ('+(res.length-show.length)+')</button>':"");
+  $("clr").onclick=function(){$("q").value="";};
+  if($("more"))$("more").onclick=function(){renderSearch(q,show.length+LIMIT);};
+}
+
+function route(){
+  var q=$("q").value.trim();
+  if(q){renderSearch(q);return;}
+  var h=location.hash.slice(1),m=/^t=(.+)$/.exec(h);
+  if(m)renderTopic(decodeURIComponent(m[1]));else renderHome();
+}
+var qt;$("q").addEventListener("input",function(){clearTimeout(qt);qt=setTimeout(route,180);});
+window.addEventListener("hashchange",function(){
+  var m=/^l=(\d+)/.exec(location.hash.slice(1));
+  if(m){openLesson(+m[1]);return;}
+  route();
+});
+
+view.addEventListener("click",function(e){
+  var row=e.target.closest(".lesson");if(!row)return;
+  var x=byId[row.dataset.i];if(!x)return;
+  if(cur&&cur.i===x.i){toggle();return;}
+  play(x);
+});
+
+// ----- player -----
+var audio=$("audio"),cur=null,rates=[1,1.25,1.5,1.75,2,.75],ri=0,seeking=false;
+ri=Math.max(0,rates.indexOf(store.get("veahavta.rate",1)));
+
+function refreshRows(){
+  Array.prototype.forEach.call(document.querySelectorAll(".lesson"),function(r){
+    var on=cur&&+r.dataset.i===cur.i;r.classList.toggle("cur",!!on);
+    r.querySelector(".pbtn").textContent=on&&!audio.paused?"❚❚":"▶";
+  });
+  $("bPlay").textContent=audio.paused?"▶":"❚❚";
+}
+function play(x,noStart){
+  if(queue.indexOf(x)<0)queue=[x];
+  cur=x;audio.src=x.u;audio.playbackRate=rates[ri];
+  var start=pos[x.i]&&x.d&&pos[x.i]<x.d-10?pos[x.i]:0;
+  audio.addEventListener("loadedmetadata",function f(){audio.removeEventListener("loadedmetadata",f);if(start)audio.currentTime=start;});
+  $("pTitle").textContent=x.t;$("pSub").textContent=topicName(x.c)+(x.s?" · "+x.s:"");
+  $("bDl").href=x.u;$("player").classList.add("on");
+  store.set("veahavta.last",x.i);
+  if(!noStart)audio.play().catch(function(){});
+  if("mediaSession" in navigator){
+    navigator.mediaSession.metadata=new MediaMetadata({title:x.t,artist:topicName(x.c),album:"ספריית ואהבת"});
+    navigator.mediaSession.setActionHandler("nexttrack",next);
+    navigator.mediaSession.setActionHandler("previoustrack",prev);
+    navigator.mediaSession.setActionHandler("seekbackward",function(){skip(-15);});
+    navigator.mediaSession.setActionHandler("seekforward",function(){skip(15);});
+  }
+  refreshRows();
+}
+function toggle(){if(!cur)return;if(audio.paused)audio.play().catch(function(){});else audio.pause();}
+function skip(s){if(cur)audio.currentTime=Math.max(0,audio.currentTime+s);}
+function next(){if(!cur)return;var k=queue.indexOf(cur);if(k>=0&&k<queue.length-1)play(queue[k+1]);}
+function prev(){if(!cur)return;if(audio.currentTime>5){audio.currentTime=0;return;}var k=queue.indexOf(cur);if(k>0)play(queue[k-1]);}
+function openLesson(id){var x=byId[id];if(!x)return;play(x,true);toast("לחצו ▶ כדי להתחיל לשמוע");}
+
+$("bPlay").onclick=toggle;$("bNext").onclick=next;$("bPrev").onclick=prev;
+$("bBack").onclick=function(){skip(-15);};$("bFwd").onclick=function(){skip(15);};
+$("bRate").textContent=rates[ri]+"×";
+$("bRate").onclick=function(){ri=(ri+1)%rates.length;audio.playbackRate=rates[ri];this.textContent=rates[ri]+"×";store.set("veahavta.rate",rates[ri]);};
+$("bShare").onclick=function(){
+  if(!cur)return;var u=location.origin+location.pathname+"#l="+cur.i;
+  if(navigator.clipboard)navigator.clipboard.writeText(u).then(function(){toast("הקישור הועתק ✓");},function(){prompt("העתיקו את הקישור:",u);});
+  else prompt("העתיקו את הקישור:",u);
+};
+audio.addEventListener("play",refreshRows);audio.addEventListener("pause",refreshRows);
+audio.addEventListener("error",function(){if(cur)toast("השיעור עדיין לא זמין — נסו שוב בעוד כמה דקות");});
+var lastSave=0;
+audio.addEventListener("timeupdate",function(){
+  var d=audio.duration||(cur&&cur.d)||0;
+  if(!seeking&&d)$("seek").value=Math.round(audio.currentTime/d*1000);
+  $("tCur").textContent=fmt(audio.currentTime);$("tDur").textContent=fmt(d);
+  if(cur&&Date.now()-lastSave>4000){lastSave=Date.now();pos[cur.i]=Math.floor(audio.currentTime);store.set("veahavta.pos",pos);}
+});
+audio.addEventListener("ended",function(){if(cur){done[cur.i]=1;delete pos[cur.i];store.set("veahavta.done",done);store.set("veahavta.pos",pos);}if(sleepEnd){sleepStop();toast("🌙 השיעור הסתיים — לילה טוב");refreshRows();return;}next();});
+$("seek").addEventListener("input",function(){seeking=true;var d=audio.duration||(cur&&cur.d)||0;$("tCur").textContent=fmt(this.value/1000*d);});
+$("seek").addEventListener("change",function(){var d=audio.duration||(cur&&cur.d)||0;if(d)audio.currentTime=this.value/1000*d;seeking=false;});
+document.addEventListener("keydown",function(e){
+  if(e.target.tagName==="INPUT"||!cur)return;
+  if(e.code==="Space"){e.preventDefault();toggle();}
+  else if(e.key==="ArrowLeft")skip(15);else if(e.key==="ArrowRight")skip(-15);
+});
+
+// ----- טיימר שינה -----
+// עוצר את הנגן אחרי זמן שנבחר (או בסוף השיעור), עם ירידת עוצמה הדרגתית ב-10 השניות האחרונות.
+// סופר זמן שעון רגיל (גם בהשהיה), כמו באפליקציות שמע מקובלות.
+var sleepAt=0,sleepEnd=false,sleepTick=null,FADE=10;
+function sleepLabel(){
+  var b=$("bSleep");
+  if(sleepEnd){b.textContent="🌙 סוף שיעור";b.classList.add("on");return;}
+  if(!sleepAt){b.textContent="🌙";b.classList.remove("on");return;}
+  b.textContent="🌙 "+fmt((sleepAt-Date.now())/1000);b.classList.add("on");
+}
+function sleepStop(){
+  clearInterval(sleepTick);sleepTick=null;sleepAt=0;sleepEnd=false;audio.volume=1;sleepLabel();
+  Array.prototype.forEach.call(document.querySelectorAll("#sleepMenu button"),function(x){x.classList.remove("sel");});
+}
+function sleepFire(){audio.pause();sleepStop();toast("🌙 הנגן נעצר — לילה טוב");}
+function sleepSet(v){
+  sleepStop();
+  if(v==="0")return;
+  if(v==="end"){sleepEnd=true;}
+  else{
+    sleepAt=Date.now()+(+v)*60000;
+    sleepTick=setInterval(function(){
+      var left=(sleepAt-Date.now())/1000;
+      if(left<=0){sleepFire();return;}
+      audio.volume=left<FADE?Math.max(0,left/FADE):1;
+      sleepLabel();
+    },500);
+  }
+  var btn=document.querySelector('#sleepMenu button[data-m="'+v+'"]');if(btn)btn.classList.add("sel");
+  sleepLabel();toast(v==="end"?"🌙 הנגן ייעצר בסוף השיעור":"🌙 הנגן ייעצר בעוד "+v+" דקות");
+}
+$("bSleep").onclick=function(e){e.stopPropagation();$("sleepMenu").classList.toggle("open");};
+$("sleepMenu").addEventListener("click",function(e){
+  var b=e.target.closest("button");if(!b)return;e.stopPropagation();
+  $("sleepMenu").classList.remove("open");sleepSet(b.dataset.m);
+});
+document.addEventListener("click",function(){$("sleepMenu").classList.remove("open");});
+
+var tt;function toast(s){var t=$("toast");t.textContent=s;t.classList.add("on");clearTimeout(tt);tt=setTimeout(function(){t.classList.remove("on");},2400);}
+
+// resume strip
+var last=byId[store.get("veahavta.last",0)];
+if(last&&pos[last.i]>30){
+  $("resume").classList.add("on");
+  $("resumeName").textContent=last.t+" · "+fmt(pos[last.i]);
+  $("resumeBtn").onclick=function(){play(last);$("resume").classList.remove("on");};
+}
+
+var m=/^l=(\d+)/.exec(location.hash.slice(1));
+route();
+if(m)openLesson(+m[1]);
+if(!L.length)view.innerHTML='<div class="empty">הקטלוג בבנייה — השיעורים עולים כעת 🎧</div>';
+})();
+</script>
+</body>
+</html>
