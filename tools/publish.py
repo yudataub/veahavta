@@ -17,6 +17,7 @@ GitHub Pages מגיש mp3/m4a עם Range — <audio> רגיל מנגן ומדל�
   python publish.py catalog         כותב data.js לקטלוג
   python publish.py all             הכל ברצף
   python publish.py status
+  python publish.py verify          בודק כל קובץ באתר מול G: ומעלה מחדש קבצים קטועים
 """
 import argparse, json, os, shutil, subprocess, sys, time
 from concurrent.futures import ThreadPoolExecutor
@@ -132,7 +133,16 @@ def stage_one(f):
     dst = os.path.join(MEDIA, f["repo"], f["path"].replace("/", "\\"))
     if not (os.path.exists(dst) and os.path.getsize(dst) == f["size"]):
         os.makedirs(os.path.dirname(dst), exist_ok=True)
-        shutil.copyfile(os.path.join(SRC_ROOT, f["rel"]), dst + ".part")
+        # כונן G: (Drive for Desktop) מחזיר לפעמים קובץ חלקי בלי שגיאה — 4 קבצים עלו
+        # קטועים כך ב-2026-10-06. לכן בודקים גודל אחרי ההעתקה ומנסים שוב.
+        for attempt in range(5):
+            shutil.copyfile(os.path.join(SRC_ROOT, f["rel"]), dst + ".part")
+            if os.path.getsize(dst + ".part") == f["size"]:
+                break
+            log("  העתקה חלקית (%d/%d בייט) — מנסה שוב: %s" % (os.path.getsize(dst + ".part"), f["size"], f["rel"]))
+            time.sleep(10)
+        else:
+            raise RuntimeError("העתקה חלקית שוב ושוב: %s" % f["rel"])
         os.replace(dst + ".part", dst)
     if not f.get("dur"):
         f["dur"] = probe(dst)
@@ -302,6 +312,53 @@ def publish_catalog(n):
     log("  הקטלוג פורסם (%d שיעורים)" % n)
 
 
+# ---------- verify ----------
+def verify(m, fix=True):
+    """HEAD לכל קובץ שעלה; גודל שגוי (העתקה קטועה מ-G:) → העלאה מחדש דרך ה-Contents API."""
+    import base64, tempfile, urllib.request
+    files = [f for f in m["files"] if f.get("pushed") and not f.get("skip")]
+
+    def head(f):
+        url = "https://%s.github.io/%s/%s" % (OWNER, f["repo"], f["path"])
+        for _ in range(3):
+            try:
+                r = urllib.request.urlopen(urllib.request.Request(url, method="HEAD"), timeout=30)
+                return int(r.headers.get("Content-Length", -1))
+            except Exception:
+                time.sleep(2)
+        return -1
+    with ThreadPoolExecutor(8) as ex:
+        sizes = list(ex.map(head, files))
+    bad = [f for f, z in zip(files, sizes) if z != f["size"]]
+    log("verify: %d קבצים, %d בגודל שגוי" % (len(files), len(bad)))
+    if not fix:
+        return bad
+    for f in bad:
+        src = os.path.join(SRC_ROOT, f["rel"])
+        for attempt in range(5):
+            data = open(src, "rb").read()
+            if len(data) == f["size"]:
+                break
+            time.sleep(10)
+        else:
+            log("  לא הצלחתי לקרוא קובץ שלם: %s" % f["rel"]); continue
+        api = "repos/%s/%s/contents/%s" % (OWNER, f["repo"], f["path"])
+        sha = gh("api", api, "--jq", ".sha").stdout.strip()
+        body = {"message": "fix truncated %s" % f["path"], "content": base64.b64encode(data).decode(),
+                "sha": sha, "committer": {"name": "yuda", "email": "%s@users.noreply.github.com" % OWNER}}
+        with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as tf:
+            json.dump(body, tf); tmp = tf.name
+        try:
+            r = gh("api", "-X", "PUT", api, "--input", tmp, check=False)
+        finally:
+            os.remove(tmp)
+        if r.returncode:
+            log("  תיקון נכשל %s: %s" % (f["path"], r.stderr.strip()[-200:])); continue
+        f["dur"] = probe(src) or f.get("dur", 0)
+        save(m); log("  תוקן: %s/%s (%s)" % (f["repo"], f["path"], f["rel"]))
+    return bad
+
+
 def status(m):
     fs = m["files"]
     print("קבצים:", len(fs), "| הועתקו:", sum(1 for f in fs if f.get("staged")),
@@ -311,7 +368,7 @@ def status(m):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["plan", "stage", "push", "catalog", "all", "status"])
+    ap.add_argument("cmd", choices=["plan", "stage", "push", "catalog", "all", "status", "verify"])
     ap.add_argument("--repo")
     a = ap.parse_args()
     m = load()
@@ -325,6 +382,8 @@ def main():
             stage(m, r); push_repo(m, r); catalog(m)
     if a.cmd == "catalog": catalog(m)
     if a.cmd == "status": status(m)
+    if a.cmd == "verify":
+        if verify(m): catalog(m)
 
 
 if __name__ == "__main__":
