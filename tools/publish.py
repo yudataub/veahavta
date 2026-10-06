@@ -253,6 +253,25 @@ def push_repo(m, repo):
 
 
 # ---------- catalog ----------
+def drop_near_dups(items, weak=("misc", "other", "compil")):
+    """אותו שם + אותו אורך (±3%) = אותו שיעור שהועתק לכמה תיקיות. משאירים אחד:
+    בנושא ספציפי (לא "שונות"/רצפים) ובקובץ הגדול. ב-2026-10-06 זה הוריד 646 כפילויות
+    מקטלוג השיעורים ו-96 מואהבת — הקבצים נשארים ב-GitHub, רק לא מוצגים פעמיים."""
+    import re
+    def norm(t):
+        return re.sub(r"\s*\(\d+\)\s*$", "", t).strip()
+    rank = lambda x: (x["c"] in weak, -x["z"])
+    keep, seen = [], {}
+    for x in sorted(items, key=rank):
+        k = norm(x["t"])
+        if x["d"] and any(abs(x["d"] - d) <= max(5, 0.03 * d) for d in seen.get(k, ())):
+            continue
+        seen.setdefault(k, []).append(x["d"])
+        keep.append(x)
+    keep.sort(key=lambda x: x["i"])
+    return keep
+
+
 def catalog(m):
     import collections
     import topics as T
@@ -277,6 +296,10 @@ def catalog(m):
         tname = next((t[2] for t in T.TOPICS if t[0] == x["c"]), "")
         if k and cnt[(x["c"], k)] >= 3 and k not in tname:   # "נעמה הנגבי" בתוך נושא נעמה — לא סדרה
             x["s"] = k
+    before = len(items)
+    items = drop_near_dups(items)
+    if before != len(items):
+        log("catalog: %d כפילויות הוסתרו" % (before - len(items)))
     used = {x["c"] for x in items}
     meta = [dict(id=t[0], e=t[1], n=t[2], d=t[3], a=t[4], g=t[5]) for t in T.TOPICS if t[0] in used]
     out = os.path.join(CATALOG_DIR, "data.js")

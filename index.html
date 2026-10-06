@@ -216,7 +216,8 @@ L.forEach(function(x){
   var t=tmap[x.c];t.items.push(x);t.dur+=x.d||0;
   var top=(x.s||"").split(" / ")[0];if(top)t.subs[top]=1;
 });
-topics.sort(function(a,b){return ((TM[a.c]||{}).k||99)-((TM[b.c]||{}).k||99);});
+function ord(c){return TM[c]?TM[c].k:99;}   // k=0 הוא הנושא הראשון — לא "חסר"
+topics.sort(function(a,b){return ord(a.c)-ord(b.c);});
 var total=0;L.forEach(function(x){total+=x.d||0;});
 $("sLessons").textContent=L.length.toLocaleString("he-IL");
 $("sHours").textContent=Math.round(total/3600).toLocaleString("he-IL");
