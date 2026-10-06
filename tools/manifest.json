@@ -1497,7 +1497,10 @@
 "ext": "mp3",
 "id": 138,
 "repo": "veahavta-a02",
-"path": "a/138.mp3"
+"path": "a/138.mp3",
+"dur": 326,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אהבת בת המלך\\21 דרכים לגופה דרך נפשה - נפלאותיו של המגע.mp3",
@@ -1505,7 +1508,10 @@
 "ext": "mp3",
 "id": 139,
 "repo": "veahavta-a02",
-"path": "a/139.mp3"
+"path": "a/139.mp3",
+"dur": 499,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אהבת בת המלך\\21 דרכים לגופה דרך נפשה - נשיכות קלות.mp3",
@@ -1513,7 +1519,10 @@
 "ext": "mp3",
 "id": 140,
 "repo": "veahavta-a02",
-"path": "a/140.mp3"
+"path": "a/140.mp3",
+"dur": 211,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אהבת בת המלך\\21 דרכים לגופה דרך נפשה - נשיקה.mp3",
@@ -1521,7 +1530,10 @@
 "ext": "mp3",
 "id": 141,
 "repo": "veahavta-a02",
-"path": "a/141.mp3"
+"path": "a/141.mp3",
+"dur": 389,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אהבת בת המלך\\21 דרכים לגופה דרך נפשה - קצת רומנטיקה לא תזיק.mp3",
@@ -1529,7 +1541,10 @@
 "ext": "mp3",
 "id": 142,
 "repo": "veahavta-a02",
-"path": "a/142.mp3"
+"path": "a/142.mp3",
+"dur": 449,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אהבת בת המלך\\21 דרכים לגופה דרך נפשה - שאל את השאלות הנכונות.mp3",
@@ -1537,7 +1552,10 @@
 "ext": "mp3",
 "id": 143,
 "repo": "veahavta-a02",
-"path": "a/143.mp3"
+"path": "a/143.mp3",
+"dur": 216,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אהבת בת המלך\\21 דרכים לגופה דרך נפשה - תחמיא - לפני תוך כדי ואחרי.mp3",
@@ -1545,7 +1563,10 @@
 "ext": "mp3",
 "id": 144,
 "repo": "veahavta-a02",
-"path": "a/144.mp3"
+"path": "a/144.mp3",
+"dur": 568,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אהבת בת המלך\\output\\part_001.mp3",
@@ -1561,7 +1582,10 @@
 "ext": "mp3",
 "id": 146,
 "repo": "veahavta-a02",
-"path": "a/146.mp3"
+"path": "a/146.mp3",
+"dur": 3775,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אוננות טנטרית לנשים....ואיך לגעת באיבר מין הנשי. תלמדו.mp3",
@@ -1569,7 +1593,10 @@
 "ext": "mp3",
 "id": 147,
 "repo": "veahavta-a02",
-"path": "a/147.mp3"
+"path": "a/147.mp3",
+"dur": 301,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אייר 18\\221.23 Hz  Awaken The Female Desire - Arousal Meditation Music for Women  Venus Sexual Frequency.mp3",
@@ -1577,7 +1604,10 @@
 "ext": "mp3",
 "id": 148,
 "repo": "veahavta-a02",
-"path": "a/148.mp3"
+"path": "a/148.mp3",
+"dur": 1891,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אייר 18\\Video (1).mp3",
@@ -1585,7 +1615,11 @@
 "ext": "mp3",
 "id": 149,
 "repo": "veahavta-a02",
-"path": "a/149.mp3"
+"path": "a/149.mp3",
+"dur": 0,
+"skip": "פגום - לא ניתן לנגן",
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אייר 18\\Video.mp3",
@@ -1593,7 +1627,11 @@
 "ext": "mp3",
 "id": 150,
 "repo": "veahavta-a02",
-"path": "a/150.mp3"
+"path": "a/150.mp3",
+"dur": 0,
+"skip": "פגום - לא ניתן לנגן",
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אייר 18\\איך לפתח מח שמח וטוב לב.mp3",
@@ -1601,7 +1639,10 @@
 "ext": "mp3",
 "id": 151,
 "repo": "veahavta-a02",
-"path": "a/151.mp3"
+"path": "a/151.mp3",
+"dur": 1943,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אייר 18\\הרב מיכאל לסרי - סוד האושר והשמחה HD.mp3",
@@ -1609,7 +1650,10 @@
 "ext": "mp3",
 "id": 152,
 "repo": "veahavta-a02",
-"path": "a/152.mp3"
+"path": "a/152.mp3",
+"dur": 2128,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "איך יוצרים מרחב בטוח למעשה אהבה טיפים של דורית בר.mp3",
@@ -1617,7 +1661,10 @@
 "ext": "mp3",
 "id": 153,
 "repo": "veahavta-a02",
-"path": "a/153.mp3"
+"path": "a/153.mp3",
+"dur": 404,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "איך יוצרים סנכרון זוגי במיניות.mp3",
@@ -1625,7 +1672,10 @@
 "ext": "mp3",
 "id": 154,
 "repo": "veahavta-a02",
-"path": "a/154.mp3"
+"path": "a/154.mp3",
+"dur": 1154,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "איך להגיע לאורגזמה מחדירה שוב ושוב וגם לשפיכה נשית.mp3",
@@ -1633,7 +1683,10 @@
 "ext": "mp3",
 "id": 155,
 "repo": "veahavta-a02",
-"path": "a/155.mp3"
+"path": "a/155.mp3",
+"dur": 161,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "איך להצית חזרה את התשוקה בזוגיות.mp3",
@@ -1641,7 +1694,10 @@
 "ext": "mp3",
 "id": 156,
 "repo": "veahavta-a02",
-"path": "a/156.mp3"
+"path": "a/156.mp3",
+"dur": 222,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "איך להרחיב את היכולת שלך לחוות עונג בחייך.mp3",
@@ -1649,7 +1705,10 @@
 "ext": "mp3",
 "id": 157,
 "repo": "veahavta-a02",
-"path": "a/157.mp3"
+"path": "a/157.mp3",
+"dur": 299,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אינטימיות מודעת - הבדלים בין נשים לגברים - דורית בר.mp3",
@@ -1657,7 +1716,10 @@
 "ext": "mp3",
 "id": 158,
 "repo": "veahavta-a02",
-"path": "a/158.mp3"
+"path": "a/158.mp3",
+"dur": 2804,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אלטרנטיבלי - 10 טיפים לזוגיות מאושרת ומוצלחת.mp3",
@@ -1665,7 +1727,10 @@
 "ext": "mp3",
 "id": 159,
 "repo": "veahavta-a02",
-"path": "a/159.mp3"
+"path": "a/159.mp3",
+"dur": 55,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\!ברוכה הבאה הביתה.mp3",
@@ -1673,7 +1738,10 @@
 "ext": "mp3",
 "id": 160,
 "repo": "veahavta-a02",
-"path": "a/160.mp3"
+"path": "a/160.mp3",
+"dur": 176,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\איך לדבר עם הילדים שלך על סקס..בלי מבוכה!.mp3",
@@ -1681,7 +1749,10 @@
 "ext": "mp3",
 "id": 161,
 "repo": "veahavta-a02",
-"path": "a/161.mp3"
+"path": "a/161.mp3",
+"dur": 331,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\איך להגביר את הזוהר הנשי הטבעי והממגנט שלך.mp3",
@@ -1689,7 +1760,10 @@
 "ext": "mp3",
 "id": 162,
 "repo": "veahavta-a02",
-"path": "a/162.mp3"
+"path": "a/162.mp3",
+"dur": 290,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\איך להטריף את הגבר שלך במיטה ולגרום לו להתמכר אלייך.mp3",
@@ -1697,7 +1771,10 @@
 "ext": "mp3",
 "id": 163,
 "repo": "veahavta-a02",
-"path": "a/163.mp3"
+"path": "a/163.mp3",
+"dur": 803,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\איך להיות מאושרת גם בזמנים ממש קשים.mp3",
@@ -1705,7 +1782,10 @@
 "ext": "mp3",
 "id": 164,
 "repo": "veahavta-a02",
-"path": "a/164.mp3"
+"path": "a/164.mp3",
+"dur": 440,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\איך להרגיש עצמתית ומחוברת לעצמך ולגוף שלך - גם אצל רופאת נשים!.mp3",
@@ -1713,7 +1793,10 @@
 "ext": "mp3",
 "id": 165,
 "repo": "veahavta-a02",
-"path": "a/165.mp3"
+"path": "a/165.mp3",
+"dur": 1502,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\איך להרחיב את היכולת שלך לחוות עונג בחייך.mp3",
@@ -1730,7 +1813,10 @@
 "ext": "mp3",
 "id": 167,
 "repo": "veahavta-a02",
-"path": "a/167.mp3"
+"path": "a/167.mp3",
+"dur": 1075,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\איך להתחבר לאישה הפראית שבתוכך.mp3",
@@ -1738,7 +1824,10 @@
 "ext": "mp3",
 "id": 168,
 "repo": "veahavta-a02",
-"path": "a/168.mp3"
+"path": "a/168.mp3",
+"dur": 114,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\איך להתמודד עם פערים בחשק המיני בצורה מעצימה, חיובית ואפקטיבית!.mp3",
@@ -1746,7 +1835,10 @@
 "ext": "mp3",
 "id": 169,
 "repo": "veahavta-a02",
-"path": "a/169.mp3"
+"path": "a/169.mp3",
+"dur": 340,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\איך להתמלא במוטיבציה ולהתמיד עם שינויים בחייך ב-5 צעדים.mp3",
@@ -1754,7 +1846,10 @@
 "ext": "mp3",
 "id": 170,
 "repo": "veahavta-a02",
-"path": "a/170.mp3"
+"path": "a/170.mp3",
+"dur": 495,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\איך לחוות שפיכה נשית ב-6 צעדים.mp3",
@@ -1762,7 +1857,10 @@
 "ext": "mp3",
 "id": 171,
 "repo": "veahavta-a02",
-"path": "a/171.mp3"
+"path": "a/171.mp3",
+"dur": 287,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\איך לעזור לגבר שאיתך עם אין-אונות או שפיכה מוקדמת.mp3",
@@ -1770,7 +1868,10 @@
 "ext": "mp3",
 "id": 172,
 "repo": "veahavta-a02",
-"path": "a/172.mp3"
+"path": "a/172.mp3",
+"dur": 1710,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\איך לעזור לו להביא יותר רגש ולפתוח את הלב במיטה ובכלל.mp3",
@@ -1778,7 +1879,10 @@
 "ext": "mp3",
 "id": 173,
 "repo": "veahavta-a02",
-"path": "a/173.mp3"
+"path": "a/173.mp3",
+"dur": 344,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\איך לצאת מעבדות לחירות מינית (לנשים).mp3",
@@ -1786,7 +1890,10 @@
 "ext": "mp3",
 "id": 174,
 "repo": "veahavta-a02",
-"path": "a/174.mp3"
+"path": "a/174.mp3",
+"dur": 1001,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\איך לרפא קנדידה באופן טבעי (גם בלי תרופות סבתא)!.mp3",
@@ -1794,7 +1901,10 @@
 "ext": "mp3",
 "id": 175,
 "repo": "veahavta-a02",
-"path": "a/175.mp3"
+"path": "a/175.mp3",
+"dur": 230,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\איך תוודאי שהשנה הזו תהיה שנה מודלקת.mp3",
@@ -1802,7 +1912,10 @@
 "ext": "mp3",
 "id": 176,
 "repo": "veahavta-a02",
-"path": "a/176.mp3"
+"path": "a/176.mp3",
+"dur": 329,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\איך תכלס להתחבר לחזון ולתשוקה שלי ביומיום ומענה לשאלות ששאלתן אותי.mp3",
@@ -1810,7 +1923,10 @@
 "ext": "mp3",
 "id": 177,
 "repo": "veahavta-a02",
-"path": "a/177.mp3"
+"path": "a/177.mp3",
+"dur": 585,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\אני מגיעה לישראל!  את באה לשחק איתי.mp3",
@@ -1818,7 +1934,10 @@
 "ext": "mp3",
 "id": 178,
 "repo": "veahavta-a02",
-"path": "a/178.mp3"
+"path": "a/178.mp3",
+"dur": 143,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\בחני את עצמך מה החסם המיני העיקרי שלך.mp3",
@@ -1826,7 +1945,10 @@
 "ext": "mp3",
 "id": 179,
 "repo": "veahavta-a02",
-"path": "a/179.mp3"
+"path": "a/179.mp3",
+"dur": 99,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\האם את נותנת את הכוח שלך לגורמים חיצוניים.mp3",
@@ -1834,7 +1956,10 @@
 "ext": "mp3",
 "id": 180,
 "repo": "veahavta-a02",
-"path": "a/180.mp3"
+"path": "a/180.mp3",
+"dur": 279,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\האם באמת אורגזמה דגדגנית היא ״פחות טובה״ מאורגזמה פנימית.mp3",
@@ -1842,7 +1967,10 @@
 "ext": "mp3",
 "id": 181,
 "repo": "veahavta-a02",
-"path": "a/181.mp3"
+"path": "a/181.mp3",
+"dur": 86,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\האם תרגול עם ביצת ג׳ייד יכול להזיק לך [אל תתחילי לתרגל בלי לצפות בסרטון הזה!].mp3",
@@ -1850,7 +1978,10 @@
 "ext": "mp3",
 "id": 182,
 "repo": "veahavta-a02",
-"path": "a/182.mp3"
+"path": "a/182.mp3",
+"dur": 2941,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\המילה הכי סקסית שכל גבר רוצה לשמוע ממך.mp3",
@@ -1858,7 +1989,10 @@
 "ext": "mp3",
 "id": 183,
 "repo": "veahavta-a02",
-"path": "a/183.mp3"
+"path": "a/183.mp3",
+"dur": 546,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\הנוגדן הכי טוב לקורונה ואיך להוריד את רמות הסטרס בגוף שלך ולחזק את המערכת החיסונית.mp3",
@@ -1866,7 +2000,10 @@
 "ext": "mp3",
 "id": 184,
 "repo": "veahavta-a02",
-"path": "a/184.mp3"
+"path": "a/184.mp3",
+"dur": 1272,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\כלי חזק בטירוף לזיהוי מה חוסם אותך מהפצת האור שלך בעולם.mp3",
@@ -1874,7 +2011,10 @@
 "ext": "mp3",
 "id": 185,
 "repo": "veahavta-a02",
-"path": "a/185.mp3"
+"path": "a/185.mp3",
+"dur": 537,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\להיות מוכנה לחדירה - מידע חשוב חשוב לנשים.mp3",
@@ -1882,7 +2022,10 @@
 "ext": "mp3",
 "id": 186,
 "repo": "veahavta-a02",
-"path": "a/186.mp3"
+"path": "a/186.mp3",
+"dur": 520,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\למה נשים מזייפות אורגזמות.mp3",
@@ -1890,7 +2033,10 @@
 "ext": "mp3",
 "id": 187,
 "repo": "veahavta-a02",
-"path": "a/187.mp3"
+"path": "a/187.mp3",
+"dur": 161,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\מיוחד לנשים איך לאהוב את הגוף שלך בדיוק כפי שהיא.mp3",
@@ -1898,7 +2044,10 @@
 "ext": "mp3",
 "id": 188,
 "repo": "veahavta-a02",
-"path": "a/188.mp3"
+"path": "a/188.mp3",
+"dur": 118,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\על הקשר בין כסף, נשיות ואנרגיה מינית (ולמה זה קריטי שתרוויחי יותר כאישה).mp3",
@@ -1906,7 +2055,10 @@
 "ext": "mp3",
 "id": 189,
 "repo": "veahavta-a02",
-"path": "a/189.mp3"
+"path": "a/189.mp3",
+"dur": 588,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\פוליאמוריה, יחסים פתוחים או מונוגמיה - האם זאת השאלה.mp3",
@@ -1914,7 +2066,10 @@
 "ext": "mp3",
 "id": 190,
 "repo": "veahavta-a02",
-"path": "a/190.mp3"
+"path": "a/190.mp3",
+"dur": 1310,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\פעילות התקרקעות ואנטי סטרס   יום מספר 12.mp3",
@@ -1922,7 +2077,10 @@
 "ext": "mp3",
 "id": 191,
 "repo": "veahavta-a02",
-"path": "a/191.mp3"
+"path": "a/191.mp3",
+"dur": 707,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\פעילות התקרקעות ואנטי סטרס   יום מספר 13.mp3",
@@ -1930,7 +2088,10 @@
 "ext": "mp3",
 "id": 192,
 "repo": "veahavta-a02",
-"path": "a/192.mp3"
+"path": "a/192.mp3",
+"dur": 862,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\פעילות התקרקעות ואנטי סטרס   יום מספר 14.mp3",
@@ -1938,7 +2099,10 @@
 "ext": "mp3",
 "id": 193,
 "repo": "veahavta-a02",
-"path": "a/193.mp3"
+"path": "a/193.mp3",
+"dur": 844,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\פעילות התקרקעות ואנטי-סטרס - יום #10.mp3",
@@ -1946,7 +2110,10 @@
 "ext": "mp3",
 "id": 194,
 "repo": "veahavta-a02",
-"path": "a/194.mp3"
+"path": "a/194.mp3",
+"dur": 384,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\פעילות התקרקעות ואנטי-סטרס - יום #4.mp3",
@@ -1954,7 +2121,10 @@
 "ext": "mp3",
 "id": 195,
 "repo": "veahavta-a02",
-"path": "a/195.mp3"
+"path": "a/195.mp3",
+"dur": 582,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\פעילות התקרקעות ואנטי-סטרס - יום #5.mp3",
@@ -1962,7 +2132,10 @@
 "ext": "mp3",
 "id": 196,
 "repo": "veahavta-a02",
-"path": "a/196.mp3"
+"path": "a/196.mp3",
+"dur": 706,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\פעילות התקרקעות ואנטי-סטרס - יום #6.mp3",
@@ -1970,7 +2143,10 @@
 "ext": "mp3",
 "id": 197,
 "repo": "veahavta-a02",
-"path": "a/197.mp3"
+"path": "a/197.mp3",
+"dur": 685,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\פעילות התקרקעות ואנטי-סטרס - יום #7.mp3",
@@ -1978,7 +2154,10 @@
 "ext": "mp3",
 "id": 198,
 "repo": "veahavta-a02",
-"path": "a/198.mp3"
+"path": "a/198.mp3",
+"dur": 609,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\פעילות התקרקעות ואנטי-סטרס - יום #8.mp3",
@@ -1986,7 +2165,10 @@
 "ext": "mp3",
 "id": 199,
 "repo": "veahavta-a02",
-"path": "a/199.mp3"
+"path": "a/199.mp3",
+"dur": 606,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\פעילות התקרקעות ואנטי-סטרס - יום #9.mp3",
@@ -1994,7 +2176,10 @@
 "ext": "mp3",
 "id": 200,
 "repo": "veahavta-a02",
-"path": "a/200.mp3"
+"path": "a/200.mp3",
+"dur": 683,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\פעילות התקרקעות ואנטי-סטרס - יום מספר 1.mp3",
@@ -2002,7 +2187,10 @@
 "ext": "mp3",
 "id": 201,
 "repo": "veahavta-a02",
-"path": "a/201.mp3"
+"path": "a/201.mp3",
+"dur": 727,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\פעילות התקרקעות ואנטי-סטרס - יום מספר 11.mp3",
@@ -2010,7 +2198,10 @@
 "ext": "mp3",
 "id": 202,
 "repo": "veahavta-a02",
-"path": "a/202.mp3"
+"path": "a/202.mp3",
+"dur": 836,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\פעילות התקרקעות ואנטי-סטרס - יום מספר 2.mp3",
@@ -2018,7 +2209,10 @@
 "ext": "mp3",
 "id": 203,
 "repo": "veahavta-a02",
-"path": "a/203.mp3"
+"path": "a/203.mp3",
+"dur": 685,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\פעילות התקרקעות ואנטי-סטרס - יום#3.mp3",
@@ -2026,7 +2220,10 @@
 "ext": "mp3",
 "id": 204,
 "repo": "veahavta-a02",
-"path": "a/204.mp3"
+"path": "a/204.mp3",
+"dur": 620,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\ראיון עם טובי גולד - איך לגמול את הילדים ממסכים ללא מאבקי כוח.mp3",
@@ -2034,7 +2231,10 @@
 "ext": "mp3",
 "id": 205,
 "repo": "veahavta-a02",
-"path": "a/205.mp3"
+"path": "a/205.mp3",
+"dur": 3447,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\ריפוי טראומות דרך עונג.mp3",
@@ -2042,7 +2242,10 @@
 "ext": "mp3",
 "id": 206,
 "repo": "veahavta-a02",
-"path": "a/206.mp3"
+"path": "a/206.mp3",
+"dur": 1201,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\שיר לאישה השעירה.mp3",
@@ -2050,7 +2253,10 @@
 "ext": "mp3",
 "id": 207,
 "repo": "veahavta-a02",
-"path": "a/207.mp3"
+"path": "a/207.mp3",
+"dur": 132,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\תרגיל קטן וחשוב שיעזור לך לחיות מתוך האמת הפנימית שלך.mp3",
@@ -2058,7 +2264,10 @@
 "ext": "mp3",
 "id": 208,
 "repo": "veahavta-a02",
-"path": "a/208.mp3"
+"path": "a/208.mp3",
+"dur": 264,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "אפרת וולפסון\\״סודות המשיכה - מקטילה-עצמית לבטחון-עצמי עם גברים״.mp3",
@@ -2066,7 +2275,10 @@
 "ext": "mp3",
 "id": 209,
 "repo": "veahavta-a02",
-"path": "a/209.mp3"
+"path": "a/209.mp3",
+"dur": 1736,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "ב' סיון\\1299536982.m4a",
@@ -2074,7 +2286,10 @@
 "ext": "m4a",
 "id": 210,
 "repo": "veahavta-a02",
-"path": "a/210.m4a"
+"path": "a/210.m4a",
+"dur": 738,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "ב' סיון\\איך לגעת בשדיים המדריך המקוצר.mp3",
@@ -2082,7 +2297,10 @@
 "ext": "mp3",
 "id": 211,
 "repo": "veahavta-a02",
-"path": "a/211.mp3"
+"path": "a/211.mp3",
+"dur": 927,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "ב' סיון\\איך לענג אישה.mp3",
@@ -2090,7 +2308,10 @@
 "ext": "mp3",
 "id": 212,
 "repo": "veahavta-a02",
-"path": "a/212.mp3"
+"path": "a/212.mp3",
+"dur": 663,
+"staged": true,
+"pushed": true
 },
 {
 "rel": "ב' סיון\\דורית בר בראיון עם ניסים לוי על מיניות נשית (עם כתוביות).mp3",
@@ -16493,8 +16714,9 @@
 "cleaned": true
 },
 "veahavta-a02": {
-"created": false,
-"pages": false
+"created": true,
+"pages": true,
+"cleaned": true
 },
 "veahavta-a03": {
 "created": false,
